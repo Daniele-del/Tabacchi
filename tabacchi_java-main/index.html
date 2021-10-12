@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+   
+    <title>Tabacchi</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary-custom fixed-top mb-5">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="#"><img src="./media/logoNav.jpg" alt="logoNav" width="50px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sigarette</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Fornitori</a>
+              </li>
+            </ul>
+            <button type="button" class="btn  bg-secondary text-white" data-bs-toggle="modal" data-bs-target="#logInModal">
+                LogIn
+            </button>              
+          </div>
+        </div> 
+    </nav>
+
+    <!-- header -->
+    <header class="mt-5 pt-5">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="./media/video.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+          <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <h1 class="display-3">Tabacchi 80th</h1>
+              <p class="lead mb-0">Tobacco Management</p>
+            </div>
+          </div>
+        </div>
+      
+    </header>
+
+    <!-- add fornitor  -->
+     <section class="container-fluid my-5">
+       <div class="row">
+         <div class="col-12 text-center">
+            <a class="btn bg-secondary text-white" data-bs-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseForm">
+             Aggiungi Fornitore
+            </a>
+          <div class="collapse my-5" id="collapseForm">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <form id="addF" class="card card-body bg-dark text-white">
+                  <div class="row ">
+                    <div class="col-md-6">
+                      <label for="name" class="form-label">Nome</label>
+                      <input type="text" class="form-control" id="name" name="name" required>
+                      <p id="alertName" class="text-danger d-none"> Attenzione! Il nome inserito non è valido!</p>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="lastName" class="form-label">Cognome</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" required>
+                      <p id="alertLastName" class="text-danger d-none"> Attenzione! Il cognome inserito non è valido!</p>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="emailf" class="form-label">Email</label>
+                      <input type="emailf" class="form-control" id="emailf" name="emailf" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="pIva" class="form-label">P. IVA</label>
+                      <input type="number" class="form-control" id="pIva" name="pIva" required>
+                      <p id="alertPIva" class="text-danger d-none"> Attenzione! la P.IVA non è corretta</p>
+                    </div>
+                    <div class="col-12">
+                      <label for="data" class="form-label">Data di Nascita</label>
+                      <input type="date" class="form-control" id="data" name="data" required>
+                      <p id="alertData" class="text-danger d-none"> Attenzione! La data inserita non è corretta!</p>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="address" class="form-label">Indirizzo</label>
+                      <input type="text" class="form-control" id="address" name="address" required>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="comune" class="form-label">Comune</label>
+                      <input type="text" class="form-control" id="comune" name="comune" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="gender" class="form-label">Sesso</label>
+                      <select id="gender" class="form-select" name="gender" required>
+                        <option selected value="M">Maschio</option>
+                        <option value="F">Femmina</option>
+                      </select>
+                    </div>
+                    <div class="col-12 my-5 ">
+                      <button type="submit" class="btn bg-accent w-100 text-white">Aggiungi Fornitore</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+         </div>
+       </div>
+     </section>
+
+     <!-- table fornitures  -->
+<section class="container-fluid my-5">
+  <div class="row">
+    <div class="col-12 text-center text-white">
+      <h2>Fornitori</h2>
+    </div>
+    <div class="col-12">
+
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">P.IVA</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody id="fornitoreTable">
+         
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+
+     <!-- table cigarettes -->
+     <section class="container-fluid my-5 pb-5">
+      <div class="row">
+        <div class="col-12 text-center text-white">
+          <h2>Sigarette</h2>
+        </div>
+        <div class="col-12">
+    
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Modello</th>
+                <th scope="col">Quantità</th>
+                <th scope="col">Prezzo</th>
+                <th scope="col">Marca</th>
+              </tr>
+            </thead>
+            <tbody id="SigaretteTable">
+            </tbody>
+          </table>
+    
+        </div>
+      </div>
+    </section>
+    
+      <!-- footer  -->
+      <div class="footer mt-5">
+        <div class="content">
+          <div class="text-white">
+            <div><h3>Disclaimer</h3></div>
+            <div><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, ab ullam. Omnis cumque earum quod nihil quia molestias perspiciatis quis ea, distinctio ullam quaerat optio saepe doloribus sapiente? Beatae, doloribus.</p></div>
+          </div>
+          <div><a class="image" href="https://codepen.io/z-" target="_blank" style="background-image: url(./media/logoNav.jpg)"></a>
+          </div>
+        </div>
+      </div>
+      <svg style="position: fixed; top: 100vh">
+        <defs>
+          <filter id="blob">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="blob" operator="atop"></feComposite>
+          </filter>
+        </defs>
+      </svg>
+
+
+      <!-- modal  -->
+      <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content bg-primary-custom text-white rounded-3">
+            <div class="modal-header">
+              <h5 class="modal-title" id="logInModalLabel">LogIn</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn bg-secondary text-white">Submit</button>
+                    <a type="submit" class="btn bg-accent text-white">Register</a>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
